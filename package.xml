@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<package format="3">
+  <name>glass_detection</name>
+  <version>1.0.1</version>
+
+  <description>
+    ROS 2 package for detecting glass objects from Detection3DArray messages.
+  </description>
+
+  <maintainer email="pra7805s@hs-coburg.de">Prajeeth</maintainer>
+
+  <license>Apache-2.0</license>
+
+  <depend>rclpy</depend>
+  <depend>sensor_msgs</depend>
+  <depend>std_msgs</depend>
+  <depend>vision_msgs</depend>
+
+  <test_depend>ament_copyright</test_depend>
+  <test_depend>ament_flake8</test_depend>
+  <test_depend>ament_pep257</test_depend>
+  <test_depend>python3-pytest</test_depend>
+
+  <export>
+    <build_type>ament_python</build_type>
+  </export>
+</package>

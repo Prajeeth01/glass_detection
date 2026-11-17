@@ -1,0 +1,21 @@
+image: ros:humble
+
+stages:
+  - test
+
+before_script:
+  - apt-get update
+  - apt-get install -y python3-colcon-common-extensions python3-pip python3-lark ros-humble-vision-msgs
+  - pip3 install coverage
+  - source /opt/ros/humble/setup.bash
+
+test:
+  stage: test
+  script:
+    - colcon build
+    - source install/setup.bash
+    - colcon test --event-handlers console_direct+
+    - colcon test-result --verbose
+    - python3 -m coverage erase
+    - python3 -m coverage run --source=glass_detection -m pytest test
+    - python3 -m coverage report -m
